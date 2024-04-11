@@ -2,11 +2,19 @@
 
 password = ''
 
+
 def encode(password):
     password = list(password)
     encoded = [str(int(items) + 3) for items in password]
     encoded = ''.join(encoded)
     return encoded
+
+
+def decode(password):
+    decoded = ''
+    for i in password:
+        decoded += str(int(i)-3)
+    return decoded
 
 
 def main():
@@ -22,7 +30,7 @@ def main():
             password = encode(to_encode)
             print('Your password has been encoded and stored!\n')
         elif selection == 2:
-            pass
+            print(f'The encoded password is {password}, and the original password is {decode(password)}.')
         elif selection == 3:
             break
 
